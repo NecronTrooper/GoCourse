@@ -5,13 +5,13 @@ func main() {
 
 	SortSlice(slice)
 
-	PrintSlice(slice)
+	IncrementOdd(slice)
 
 	RevereSlice(slice)
 
 	PrintSlice(slice)
 
-	IncrementOdd(slice)
+	incrementTwiceOddSortPrint := appendFunc(IncrementOdd, IncrementOdd, SortSlice, PrintSlice)
 
-	PrintSlice(slice)
+	incrementTwiceOddSortPrint(slice)
 }
