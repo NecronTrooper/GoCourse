@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 Assignment #1:
 1. Create a private repository in github.com for the Assignment. Add tmustakhov as a Collaborator to your repo.
@@ -22,8 +24,8 @@ Assignment #1:
 
 func SortSlice(slice []int) { //bubble sort
 	n := len(slice)
-	for i := 0; i <= n; i++ {
-		for j := 0; j <= n-i; j++ {
+	for i := 0; i < n-1; i++ {
+		for j := 0; j < n-i-1; j++ {
 			if slice[j] > slice[j+1] {
 				slice[j], slice[j+1] = slice[j+1], slice[j]
 			}
@@ -31,9 +33,34 @@ func SortSlice(slice []int) { //bubble sort
 	}
 }
 
-func IncrementOdd(slice []int) {
+func IncrementOdd(slice []int) { //slice []int{0,1(+1),2,3(+1),...}
 	n := len(slice)
-	for i := 0; i <= n; i++ {
+	for i := 0; i < n-1; i++ {
+		if i%2 == 1 {
+			slice[i] = slice[i] + 1
+		}
+	}
+}
 
+func PrintSlice(slice []int) { // prints with "," after every element
+	n := len(slice)
+	fmt.Print("[")
+	for i := 0; i < n; i++ {
+		if n-1 != i {
+			fmt.Print(slice[i], ",")
+		} else {
+			fmt.Print(slice[i])
+		}
+	}
+	fmt.Println("]")
+}
+
+func RevereSlice(slice []int) {
+	n := len(slice) / 2
+	m := len(slice)
+	for i := 0; i < n; i++ {
+		temp := slice[i]
+		slice[i] = slice[m-1-i]
+		slice[m-1-i] = temp
 	}
 }

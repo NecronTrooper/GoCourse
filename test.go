@@ -1,10 +1,17 @@
 package main
 
-import "fmt"
-
 func main() {
-	slice := []int{5, 5, 8, 7, 9, 1, 20}
+	slice := []int{-5, -10, -1, 5, 15, 1}
+
 	SortSlice(slice)
 
-	fmt.Println(slice)
+	PrintSlice(slice)
+
+	RevereSlice(slice)
+
+	PrintSlice(slice)
+
+	IncrementOdd(slice)
+
+	PrintSlice(slice)
 }
